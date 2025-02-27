@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  postgres_velo_db:
+    image: postgres:17.2-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: 'velo'
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'postgres'
+    ports:
+      - '5051:5432'
+    volumes:
+      - db-data:/var/lib/postgresql/data
+  postgres_sales_db:
+    image: postgres:17.2-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: 'tutorial_op'
+      POSTGRES_USER: 'rufina'
+      POSTGRES_PASSWORD: 'sales'
+    ports:
+      - '5052:5432'
+    volumes:
+      - sales:/var/lib/postgresql/data
+
+volumes:
+  db-data:
+  sales:
