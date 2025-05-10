@@ -1,0 +1,5 @@
+weather_id,weather_type
+1,Unpleasant
+2,Pleasant
+3,Neutral
+4,Unknown
